@@ -5,7 +5,7 @@ info:
   description: 'This is the IPFS Pinning Service API. It attempts to be an implementation-agnostic API.'
 servers:
   - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/lanzafame/ipfs-pinning-service/v0.0.0
+    url: https://virtserver.swaggerhub.com/api/v0
 paths:
   /pins:
     get:

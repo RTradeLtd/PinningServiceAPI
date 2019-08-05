@@ -58,42 +58,42 @@ var routes = Routes{
 	{
 		"Index",
 		http.MethodGet,
-		"/lanzafame/ipfs-pinning-service/v0.0.0/",
+		"/api/v0/",
 		Index,
 	},
 
 	{
 		"PinsCidDelete",
 		http.MethodDelete,
-		"/lanzafame/ipfs-pinning-service/v0.0.0/pins/:cid",
+		"/api/v0/pins/:cid",
 		PinsCidDelete,
 	},
 
 	{
 		"PinsCidGet",
 		http.MethodGet,
-		"/lanzafame/ipfs-pinning-service/v0.0.0/pins/:cid",
+		"/api/v0/pins/:cid",
 		PinsCidGet,
 	},
 
 	{
 		"PinsCidPost",
 		http.MethodPost,
-		"/lanzafame/ipfs-pinning-service/v0.0.0/pins/:cid",
+		"/api/v0/pins/:cid",
 		PinsCidPost,
 	},
 
 	{
 		"PinsGet",
 		http.MethodGet,
-		"/lanzafame/ipfs-pinning-service/v0.0.0/pins",
+		"/api/v0/pins",
 		PinsGet,
 	},
 
 	{
 		"PinsPost",
 		http.MethodPost,
-		"/lanzafame/ipfs-pinning-service/v0.0.0/pins",
+		"/api/v0/pins",
 		PinsPost,
 	},
 }

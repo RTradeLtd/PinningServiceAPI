@@ -6,7 +6,7 @@ info:
   version: v0.0.0
 servers:
 - description: SwaggerHub API Auto Mocking
-  url: https://virtserver.swaggerhub.com/lanzafame/ipfs-pinning-service/v0.0.0
+  url: https://virtserver.swaggerhub.com/api/v0
 security:
 - tokenAuth: []
 paths:
