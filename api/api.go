@@ -9,10 +9,29 @@ type API struct {
 
 // NewAPI instantiates a new instance of the pinning service API
 func NewAPI( /*TODO(postables): take in database*/ ) *API {
-	return &API{router: NewRouter()}
+	api := &API{}
+	api.InitializeRouter()
+	return api
 }
 
 // Run starts the api and access incoming connections
 func (a *API) Run(address string) error {
 	return a.router.Run(address)
+}
+
+// InitializeRouter initializes the gin router engine
+func (a *API) InitializeRouter() {
+	router := gin.Default()
+
+	root := router.Group("/")
+	pins := root.Group("pins")
+	{
+		pins.GET("", a.PinsGet)
+		pins.POST("", a.PinsPost)
+		pins.DELETE("/:cid", a.PinsCidDelete)
+		pins.GET("/:cid", a.PinsCidGet)
+		pins.POST("/:cid", a.PinsCidPost)
+	}
+
+	a.router = router
 }

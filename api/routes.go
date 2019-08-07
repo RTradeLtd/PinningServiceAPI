@@ -12,30 +12,38 @@ package api
 import (
 	"net/http"
 
+	"github.com/RTradeLtd/PinningServiceAPI/api/models"
 	"github.com/gin-gonic/gin"
 )
 
 // PinsCidDelete - Remove a Pin
-func PinsCidDelete(c *gin.Context) {
+func (a *API) PinsCidDelete(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{})
 }
 
 // PinsCidGet - Get status of a Pin
-func PinsCidGet(c *gin.Context) {
+func (a *API) PinsCidGet(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{})
 }
 
 // PinsCidPost - Add a new Pin
-func PinsCidPost(c *gin.Context) {
+func (a *API) PinsCidPost(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{})
 }
 
 // PinsGet - Get all pins
-func PinsGet(c *gin.Context) {
+func (a *API) PinsGet(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{})
 }
 
 // PinsPost - Add an array of pins
-func PinsPost(c *gin.Context) {
+func (a *API) PinsPost(c *gin.Context) {
+	var request models.Pin
+	if err := c.BindJSON(&request); err != nil {
+		// if this fails, it means the user sent an invalid request
+		// and we were unable to bind to the Pin model correctly
+		a.handleError(c, http.StatusBadRequest, err.Error())
+		return
+	}
 	c.JSON(http.StatusOK, gin.H{})
 }
