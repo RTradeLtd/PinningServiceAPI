@@ -10,7 +10,6 @@
 package models
 
 type Pin struct {
-
 	Cid Cid `json:"cid,omitempty"`
 
 	Metadata map[string]string `json:"metadata,omitempty"`

@@ -13,7 +13,6 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/RTradeLtd/PinningServiceAPI/api/models"
 )
 
 // Route is the information for every URI.
@@ -67,34 +66,34 @@ var routes = Routes{
 		"PinsCidDelete",
 		http.MethodDelete,
 		"/pins/:cid",
-		models.PinsCidDelete,
+		PinsCidDelete,
 	},
 
 	{
 		"PinsCidGet",
 		http.MethodGet,
 		"/pins/:cid",
-		models.PinsCidGet,
+		PinsCidGet,
 	},
 
 	{
 		"PinsCidPost",
 		http.MethodPost,
 		"/pins/:cid",
-		models.PinsCidPost,
+		PinsCidPost,
 	},
 
 	{
 		"PinsGet",
 		http.MethodGet,
 		"/pins",
-		models.PinsGet,
+		PinsGet,
 	},
 
 	{
 		"PinsPost",
 		http.MethodPost,
 		"/pins",
-		models.PinsPost,
+		PinsPost,
 	},
 }

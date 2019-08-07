@@ -10,7 +10,6 @@
 package models
 
 type PinStatus struct {
-
 	Peername string `json:"peername,omitempty"`
 
 	Peer string `json:"peer,omitempty"`

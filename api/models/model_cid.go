@@ -10,6 +10,5 @@
 package models
 
 type Cid struct {
-
 	_ string `json:"/,omitempty"`
 }

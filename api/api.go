@@ -11,3 +11,8 @@ type API struct {
 func NewAPI( /*TODO(postables): take in database*/ ) *API {
 	return &API{router: NewRouter()}
 }
+
+// Run starts the api and access incoming connections
+func (a *API) Run(address string) error {
+	return a.router.Run(address)
+}
