@@ -33,7 +33,9 @@ func (a *API) PinsCidPost(c *gin.Context) {
 
 // PinsGet - Get all pins
 func (a *API) PinsGet(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{})
+	var response models.PinStatus
+	// TODO(postables): populate pin status
+	c.JSON(http.StatusOK, response)
 }
 
 // PinsPost - Add an array of pins
@@ -45,5 +47,5 @@ func (a *API) PinsPost(c *gin.Context) {
 		a.handleError(c, http.StatusBadRequest, err.Error())
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{})
+	c.JSON(http.StatusAccepted, gin.H{})
 }
