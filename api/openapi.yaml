@@ -1,12 +1,22 @@
 openapi: 3.0.0
 info:
-  description: This is the IPFS Pinning Service API. It attempts to be an implementation-agnostic
-    API.
-  title: IPFS Pinning Service
-  version: v0.0.0
+  description: "This is the IPFS Pinning Service API. It attempts to be an  implementation-agnostic\
+    \ API designed to be implemented by Pinning Service  Providers. \n\nThis specification\
+    \ does **NOT** define the IPFS pinning API.\n\nGitHub discussion around this API\
+    \ can be found in [ipfs/notes](https://github.com/ipfs/notes/issues/378).\n\n\n\
+    **Critical Notice**\n\nTo allow backend systems behind the API to associate pins\
+    \ with a particular  user, the API requires that a JSON Web Token is passed with\
+    \ requests that  contains a `sub` claim (as specified by  [OpenIDConnect Standard\
+    \ Claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims))\
+    \ that represents the user's identity within the backend system, so as to  associate\
+    \ the user with their pins. This allows the backend system to use  the identity\
+    \ as a form of reference counting on pins, therefore only  removing pins once\
+    \ no other users have it pinned."
+  title: IPFS Pinning Service API
+  version: 0.0.1
 servers:
 - description: SwaggerHub API Auto Mocking
-  url: https://virtserver.swaggerhub.com/api/v0
+  url: https://virtserver.swaggerhub.com/lanzafame/ipfs-pinning-service/v0.0.1
 security:
 - tokenAuth: []
 paths:
