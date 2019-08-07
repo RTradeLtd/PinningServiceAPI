@@ -12,6 +12,8 @@ package api
 import (
 	"net/http"
 
+	"time"
+
 	"github.com/RTradeLtd/PinningServiceAPI/api/models"
 	"github.com/gin-gonic/gin"
 )
@@ -34,6 +36,15 @@ func (a *API) PinsCidPost(c *gin.Context) {
 // PinsGet - Get all pins
 func (a *API) PinsGet(c *gin.Context) {
 	var response models.PinStatus
+	response.Peername = "testpeer"
+	response.Peer = "peeer!"
+	response.Error = "no error :O"
+	response.Pin.Metadata = map[string]string{
+		"aaatem": "metaaaa",
+	}
+	response.Pin.Replication = 90000
+	response.Status = "okay"
+	response.Timestamp = time.Now().String()
 	// TODO(postables): populate pin status
 	c.JSON(http.StatusOK, response)
 }
