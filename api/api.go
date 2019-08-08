@@ -1,15 +1,19 @@
 package api
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/RTradeLtd/rtfs/v2"
+	"github.com/gin-gonic/gin"
+)
 
 // API implements the ipfs pinning service api
 type API struct {
 	router *gin.Engine
+	ipfs rtfs.Manager
 }
 
 // NewAPI instantiates a new instance of the pinning service API
-func NewAPI( /*TODO(postables): take in database*/ ) *API {
-	api := &API{}
+func NewAPI(manager rtfs.Manager) *API {
+	api := &API{ipfs: manager}
 	api.InitializeRouter()
 	return api
 }
